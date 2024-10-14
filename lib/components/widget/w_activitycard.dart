@@ -40,11 +40,11 @@ class WActivityCard extends StatelessWidget {
                         child: ImageIcon(
                           AssetImage('assets/icons/union_icon.png'),
                           color: Colors.white,
-                          size: 12,
+                          size: 16,
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.all(Const.siblingMargin()),
+                        padding: EdgeInsets.only(bottom: Const.siblingMargin(), right: Const.siblingMargin(), top: Const.siblingMargin()),
                         child: Text(
                           'IN PROGRESS',
                           textAlign: TextAlign.center,

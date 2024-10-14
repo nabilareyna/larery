@@ -80,6 +80,10 @@ flutter:
       - assets/icons/chart_icon.png
       - assets/icons/target_icon.png
       - assets/icons/crown_icon.png
+      - assets/images/Maps.png
+      - assets/icons/idk_icon.png
+      - assets/icons/maps_icon.png
+      - assets/icons/union_bigger_icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -15,9 +15,9 @@ class WCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 170,
-      height: 145,
+      height: 140,
       decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(24), border: Border.all(color: Color(0XFFFF6F6F6))),
-      padding: EdgeInsets.all(Const.siblingMargin(x: 4)),
+      padding: EdgeInsets.all(Const.siblingMargin(x: 3)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

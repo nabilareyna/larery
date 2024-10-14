@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:larery/components/widget/w_activitycard.dart';
 import 'package:larery/components/widget/w_card.dart';
 import 'package:larery/module/homepage/controller/c_homepage.dart';
+import 'package:larery/routes/routes.dart';
 import 'package:larery/utils/const.dart';
 
 class HomePage extends GetView<CHomePage> {
@@ -12,19 +13,20 @@ class HomePage extends GetView<CHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          shape: CircleBorder(),
-          backgroundColor: Colors.black,
-          child: ImageIcon(
-            AssetImage("assets/icons/pause_icon.png"),
-            color: Colors.white,
-            size: 36,
-          ),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        body: Padding(
+      backgroundColor: Colors.white,
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {},
+      //   shape: CircleBorder(),
+      //   backgroundColor: Colors.black,
+      //   child: ImageIcon(
+      //     AssetImage("assets/icons/pause_icon.png"),
+      //     color: Colors.white,
+      //     size: 36,
+      //   ),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      body: SingleChildScrollView(
+        child: Padding(
           padding: EdgeInsets.symmetric(horizontal: Const.parentMargin(), vertical: Const.parentMargin(x: 2)),
           child: Column(
             children: [
@@ -55,7 +57,7 @@ class HomePage extends GetView<CHomePage> {
                       ],
                     ),
                     SizedBox(
-                      width: 130,
+                      width: 110,
                     ),
                     Container(
                       width: 42,
@@ -70,7 +72,7 @@ class HomePage extends GetView<CHomePage> {
                 ),
               ),
               SizedBox(
-                height: 24,
+                height: 20,
               ),
               Container(
                 width: double.infinity,
@@ -101,7 +103,7 @@ class HomePage extends GetView<CHomePage> {
                     ),
                     Container(
                       height: 40,
-                      width: 183,
+                      width: 160,
                       child: Text("Let’s Create Your Amazing Track!",
                           textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false, applyHeightToLastDescent: false),
                           style: GoogleFonts.inter(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600)),
@@ -123,11 +125,16 @@ class HomePage extends GetView<CHomePage> {
                 ),
               ),
               SizedBox(
-                height: 24,
+                height: 15,
               ),
-              WActivityCard(),
+              InkWell(
+                onTap: () {
+                  Get.toNamed(Routes.challengepage);
+                },
+                child: WActivityCard(),
+              ),
               SizedBox(
-                height: 10,
+                height: 15,
               ),
               Column(
                 children: [
@@ -144,6 +151,9 @@ class HomePage extends GetView<CHomePage> {
                       ),
                     ],
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                     WCard(icon: "assets/icons/clock_icon.png", title: "Total Time", amount: "92", details: "Minutes", color: Color(0XFFF9092DF)),
                     WCard(
@@ -159,64 +169,68 @@ class HomePage extends GetView<CHomePage> {
             ],
           ),
         ),
-        bottomNavigationBar: BottomAppBar(
-          height: 90,
-          child: Container(
-            height: 30,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    MaterialButton(
-                      minWidth: 20,
-                      onPressed: () {},
-                      child: Column(
-                        children: [
-                          ImageIcon(
-                            AssetImage("assets/icons/home_icon.png"),
-                            size: 40,
-                          )
-                        ],
-                      ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        height: 90,
+        color: Colors.white,
+        child: Container(
+          decoration: BoxDecoration(border: Border(top: BorderSide(color: Color(0XFFFF6F6F6)))),
+          width: double.infinity,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  MaterialButton(
+                    minWidth: 20,
+                    onPressed: () {},
+                    child: ImageIcon(
+                      AssetImage("assets/icons/home_icon.png"),
+                      size: 40,
                     ),
-                    MaterialButton(
-                      minWidth: 20,
-                      onPressed: () {},
-                      child: Column(
-                        children: [
-                          ImageIcon(
-                            AssetImage("assets/icons/chart_icon.png"),
-                            size: 24,
-                          )
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    MaterialButton(
-                      minWidth: 20,
-                      onPressed: () {},
-                      child: Column(
-                        children: [ImageIcon(AssetImage("assets/icons/target_icon.png"))],
-                      ),
+                  ),
+                  MaterialButton(
+                    minWidth: 20,
+                    onPressed: () {},
+                    child: ImageIcon(
+                      AssetImage("assets/icons/chart_icon.png"),
+                      size: 40,
                     ),
-                    MaterialButton(
-                      minWidth: 20,
-                      onPressed: () {},
-                      child: Column(
-                        children: [ImageIcon(AssetImage("assets/icons/crown_icon.png"))],
-                      ),
-                    )
-                  ],
-                )
-              ],
-            ),
+                  ),
+                  Container(
+                    width: 70,
+                    height: 70,
+                    decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                    child: ImageIcon(
+                      AssetImage("assets/icons/pause_icon.png"),
+                      size: 40,
+                      color: Colors.white,
+                    ),
+                  ),
+                  MaterialButton(
+                    minWidth: 20,
+                    onPressed: () {},
+                    child: ImageIcon(
+                      AssetImage("assets/icons/target_icon.png"),
+                      size: 40,
+                    ),
+                  ),
+                  MaterialButton(
+                    minWidth: 20,
+                    onPressed: () {},
+                    child: ImageIcon(
+                      AssetImage("assets/icons/crown_icon.png"),
+                      size: 40,
+                    ),
+                  )
+                ],
+              )
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

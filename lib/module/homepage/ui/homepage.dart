@@ -141,8 +141,15 @@ class HomePage extends GetView<CHomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      WCard(icon: "assets/icons/heart_icon.png", title: "Heart Rate", amount: "60-72", details: "Beats", color: Color(0XFFF64DE9C)),
                       WCard(
+                          type: CardType.DEFAULT,
+                          icon: "assets/icons/heart_icon.png",
+                          title: "Heart Rate",
+                          amount: "60-72",
+                          details: "Beats",
+                          color: Color(0XFFF64DE9C)),
+                      WCard(
+                        type: CardType.DEFAULT,
                         icon: "assets/icons/fire_icon.png",
                         title: "Calories Burnt",
                         amount: "4.555",
@@ -155,8 +162,15 @@ class HomePage extends GetView<CHomePage> {
                     height: 10,
                   ),
                   Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                    WCard(icon: "assets/icons/clock_icon.png", title: "Total Time", amount: "92", details: "Minutes", color: Color(0XFFF9092DF)),
                     WCard(
+                        type: CardType.DEFAULT,
+                        icon: "assets/icons/clock_icon.png",
+                        title: "Total Time",
+                        amount: "92",
+                        details: "Minutes",
+                        color: Color(0XFFF9092DF)),
+                    WCard(
+                      type: CardType.DEFAULT,
                       icon: "assets/icons/map_icon.png",
                       title: "Total Distance",
                       amount: "12560",

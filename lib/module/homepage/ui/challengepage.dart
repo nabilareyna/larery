@@ -1,5 +1,7 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
+import 'package:larery/components/widget/w_card.dart';
 import 'package:larery/module/homepage/controller/c_challengepage.dart';
 import 'package:larery/utils/const.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -155,9 +157,84 @@ class ChallengePage extends GetView<CChallengePage> {
                               ),
                               Text("km/h", style: GoogleFonts.inter(color: Color(0XFFF696969), fontSize: 12, fontWeight: FontWeight.w500))
                             ],
+                          ),
+                          AspectRatio(
+                            aspectRatio: 3.07 / 1,
+                            child: LineChart(LineChartData(
+                                minX: 0,
+                                minY: 0,
+                                maxX: 5,
+                                maxY: 5,
+                                titlesData: FlTitlesData(show: false),
+                                borderData: FlBorderData(show: false),
+                                gridData: FlGridData(show: false),
+                                lineBarsData: [
+                                  LineChartBarData(
+                                      spots: const [
+                                        FlSpot(0, 3.5),
+                                        FlSpot(0.5, 3.5),
+                                        FlSpot(1, 2),
+                                        FlSpot(1.5, 4),
+                                      ],
+                                      isCurved: true,
+                                      color: Color(0XFFFFF9F47),
+                                      belowBarData: BarAreaData(
+                                          show: true,
+                                          gradient: LinearGradient(
+                                              begin: Alignment.topCenter,
+                                              end: Alignment.bottomCenter,
+                                              colors: [Color(0XFFFFF9F47), Color(0XFFFFF9F47).withOpacity(0)])))
+                                ])),
                           )
                         ],
                       ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        WCard(
+                            type: CardType.SMALL,
+                            icon: "assets/icons/heart_icon.png",
+                            title: "Heart Rate",
+                            amount: "60-72",
+                            details: "Beats",
+                            color: Color(0XFFF64DE9C)),
+                        WCard(
+                          type: CardType.SMALL,
+                          icon: "assets/icons/fire_icon.png",
+                          title: "Calories Burnt",
+                          amount: "4.555",
+                          details: "KCAL",
+                          color: Color(0XFFFFC5E5B),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        WCard(
+                          type: CardType.SMALL,
+                          icon: "assets/icons/clock_icon.png",
+                          title: "Total Time",
+                          amount: "92",
+                          details: "Minutes",
+                          color: Color(0XFFF9092DF),
+                        ),
+                        WCard(
+                          type: CardType.SMALL,
+                          icon: "assets/icons/map_icon.png",
+                          title: "Total Distance",
+                          amount: "12560",
+                          details: "Steps",
+                          color: Color(0XFFFF59A4FF),
+                        )
+                      ],
                     )
                   ],
                 ),

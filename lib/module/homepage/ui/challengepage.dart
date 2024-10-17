@@ -123,7 +123,6 @@ class ChallengePage extends GetView<CChallengePage> {
                     Container(
                       width: 353,
                       height: 192,
-                      padding: EdgeInsets.all(Const.parentMargin()),
                       decoration: BoxDecoration(
                           border: Border.all(
                             color: Color(0XFFFF6F6F6),
@@ -131,32 +130,35 @@ class ChallengePage extends GetView<CChallengePage> {
                           borderRadius: BorderRadius.circular(24)),
                       child: Column(
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  Container(
-                                      width: 42,
-                                      height: 42,
-                                      decoration: BoxDecoration(shape: BoxShape.circle, color: Color(0XFFFFF9F47)),
-                                      child: Image.asset(
-                                        "assets/icons/union_bigger_icon.png",
-                                      )),
-                                  SizedBox(
-                                    width: 12,
-                                  ),
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text("Your Avg Speed", style: GoogleFonts.inter(color: Color(0XFFF696969), fontSize: 12, fontWeight: FontWeight.w500)),
-                                      Text("26.70", style: GoogleFonts.inter(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w700))
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              Text("km/h", style: GoogleFonts.inter(color: Color(0XFFF696969), fontSize: 12, fontWeight: FontWeight.w500))
-                            ],
+                          Container(
+                            padding: EdgeInsets.only(top: Const.parentMargin(), left: Const.parentMargin(), right: Const.parentMargin()),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                        width: 42,
+                                        height: 42,
+                                        decoration: BoxDecoration(shape: BoxShape.circle, color: Color(0XFFFFF9F47)),
+                                        child: Image.asset(
+                                          "assets/icons/union_bigger_icon.png",
+                                        )),
+                                    SizedBox(
+                                      width: 12,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text("Your Avg Speed", style: GoogleFonts.inter(color: Color(0XFFF696969), fontSize: 12, fontWeight: FontWeight.w500)),
+                                        Text("26.70", style: GoogleFonts.inter(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w700))
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                Text("km/h", style: GoogleFonts.inter(color: Color(0XFFF696969), fontSize: 12, fontWeight: FontWeight.w500))
+                              ],
+                            ),
                           ),
                           AspectRatio(
                             aspectRatio: 3.07 / 1,
@@ -171,12 +173,22 @@ class ChallengePage extends GetView<CChallengePage> {
                                 lineBarsData: [
                                   LineChartBarData(
                                       spots: const [
-                                        FlSpot(0, 3.5),
-                                        FlSpot(0.5, 3.5),
-                                        FlSpot(1, 2),
-                                        FlSpot(1.5, 4),
+                                        FlSpot(0, 3.2),
+                                        FlSpot(0.8, 3.2),
+                                        FlSpot(1.4, 2.5),
+                                        FlSpot(2, 4),
+                                        FlSpot(2.5, 4),
+                                        FlSpot(3, 2.7),
+                                        FlSpot(3.4, 3.3),
+                                        FlSpot(3.8, 2.9),
+                                        FlSpot(4.15, 3.4),
+                                        FlSpot(4.5, 3.5),
+                                        FlSpot(4.8, 4.2),
+                                        FlSpot(5, 4.5),
                                       ],
+                                      barWidth: 4,
                                       isCurved: true,
+                                      dotData: FlDotData(show: false),
                                       color: Color(0XFFFFF9F47),
                                       belowBarData: BarAreaData(
                                           show: true,
@@ -235,6 +247,32 @@ class ChallengePage extends GetView<CChallengePage> {
                           color: Color(0XFFFF59A4FF),
                         )
                       ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 52,
+                      decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.all(Radius.circular(32))),
+                      child: Padding(
+                        padding: EdgeInsets.only(left: Const.parentMargin(x: 1.2), right: Const.siblingMargin(x: 1.5)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Finish the Challenge",
+                              style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white),
+                            ),
+                            Container(
+                              width: 36,
+                              height: 36,
+                              decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+                              child: ImageIcon(AssetImage('assets/icons/arrow_backward.png')),
+                            ),
+                          ],
+                        ),
+                      ),
                     )
                   ],
                 ),

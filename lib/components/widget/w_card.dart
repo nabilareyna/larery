@@ -71,7 +71,15 @@ class WCard extends StatelessWidget {
                         title!,
                         style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w400, color: Color(0XFFF696969)),
                       ),
-                      Text(amount!, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.black))
+                      Row(
+                        children: [
+                          Text(amount!, style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.black)),
+                          SizedBox(
+                            width: 4,
+                          ),
+                          Text(details!, style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.black)),
+                        ],
+                      )
                     ],
                   ),
                 )
